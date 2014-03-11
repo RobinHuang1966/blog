@@ -5,8 +5,20 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--会给html页面添加如下两行代码：
+    <meta content="authenticity_token" name="csrf-param" />
+    <meta content="do79QdaDz7OgR45eAjqt8fwxTiAxNrw96qcCpa0lGiI=" name="csrf-token" />
+    数值是由当前浏览器与服务器之间建立的连接而生成的，与sid有关,这样可以有效避免一般的跨站的脚本恶意访问
+-->
 </head>
 <body style="background: #EEEEEE;">
+<!--
+    %body{:id => [controller_name, action_name],
+        :class => ['c_' + controller_name],
+        'data-controller' => controller_name,
+        'data-action' => action_name }
+    对于单个controller特有的样式,自动加载各自命名的css样式
+-->
 
 <%= yield %>
 
