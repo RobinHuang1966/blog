@@ -40,6 +40,10 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    respond_to do |format|
+      format.html # edit.html.erb
+      format.json { render json: @post }
+    end
   end
 
   # POST /posts
@@ -49,6 +53,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        #这句含义redirect_to :action => "show", :id => @post
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { render action: "new" }
@@ -70,6 +75,23 @@ class PostsController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
+
+      #以下指定都只是使用指定的樣版檔案，而不會呼叫動作方法，也就是前六個指定方式，都不會呼叫edit方法。
+      #以下都表示相同的意思。详见：http://openhome.cc/Gossip/Rails/RenderRedirect.html
+      #render :edit
+      #render :action => :edit
+      #render 'edit'
+      #render :action => 'edit'
+      #render 'posts/edit'
+      #render :action => 'edit.html.erb'
+      #render 'edit.html.erb'
+      #render 'posts/edit.html.erb'
+      #render :template => 'posts/edit'
+      #render :template => 'posts/edit.html.erb'
+      #render '/path/to/rails/app/views/posts/edit'  #全路径名
+      #render '/path/to/rails/app/views/posts/edit.html.erb'
+      #render :file => '/path/to/rails/app/views/posts/edit'
+      #render :file => '/path/to/rails/app/views/posts/edit.html.erb'
     end
   end
 

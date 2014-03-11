@@ -1,4 +1,5 @@
 <% @post.tags.build %>
+<!-- form_for(@post),会产生action="/posts",method="post"的http代码片段-->
 <%= form_for(@post) do |post_form| %>
     <% if @post.errors.any? %>
         <div id="errorExplanation">
