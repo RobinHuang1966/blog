@@ -9,6 +9,9 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @posts }
+      format.xml  { render :xml => @posts } #可以用http://localhost:3000/posts.xml访问，但是没有样式。
+      #format.xml { render :xml => @posts.to_xml } #详见http://my.oschina.net/jing31/blog/6587
+      format.atom { @feed_title = "My event list" } # index.atom.builder
     end
   end
 
