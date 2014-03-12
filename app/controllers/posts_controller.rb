@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   #使用者验证出了index和show之外的所有action
   before_filter :authenticate, :except => [:index, :show]
+  #有權限的使用者才可以刪除留言,具体参加post_controller
+  #before_filter :authenticate, :only => :destroy
   # GET /posts
   # GET /posts.json
   def index
