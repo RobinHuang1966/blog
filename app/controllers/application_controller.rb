@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  #其中的protect_from_forgery方法啟動了CSRF安全性功能,
+  #非GET的HTTP request都必須帶有一個Token參數才能存取,<%= csrf_meta_tag %>
   protect_from_forgery
 
   private
