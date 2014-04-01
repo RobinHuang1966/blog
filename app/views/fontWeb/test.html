@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script language="JavaScript" src="../../../lib/jquery/jquery.js"></script>
+    <script>
+        // 'Getting' data-attributes using getAttribute
+        var plant = document.getElementById('plant');
+        var fruit = plant.getAttribute('data-fruit'); // fruit = '12'
+        // 'Setting' data-attributes using setAttribute
+        plant.setAttribute('data-fruit','7'); // Pesky birds
+    </script>
+</head>
+<body>
+<div id="awesome" data-myid="3e4ae6c4e">Some awesome data</div>
+<div id="awesome-json" data-awesome='{"game":"on"}'></div>
+<div id='plant' data-fruit='12'></div>
+</body>
+</html>
