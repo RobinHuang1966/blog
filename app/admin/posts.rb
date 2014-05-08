@@ -1,5 +1,8 @@
 include ApplicationHelper
 ActiveAdmin.register Post do
+  #menu false
+  #menu has label、priority、if、parent options
+  menu :label => "My Posts", :priority => 1
   index do
     column :id
     column "userName",:name
