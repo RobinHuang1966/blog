@@ -41,3 +41,5 @@ group :development do
   #gem "rails-erd"
   gem 'rails-erd', git: 'https://github.com/paulwittmann/rails-erd', branch: 'mavericks'
 end
+gem 'activeadmin', "0.5.1"
+gem "meta_search", '>= 1.1.0.pre'
