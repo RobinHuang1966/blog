@@ -1,4 +1,8 @@
 Blog::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   #resources :posts #建立一個 comments 的嵌套resource
 
   resources :posts do
