@@ -10,10 +10,9 @@ ActiveAdmin.register Post do
       link_to post.title, admin_post_path(post)
     end
     column :content
-    #actions do |post|
-    #  link_to "Preview", admin_preview_post_path(post), :class => "member_link"
+    #column :comments do |post|
+    #  link_to post.comments.first, admin_comments_path
     #end
-
     column do |post|
       link_to_clone post
     end
