@@ -29,7 +29,7 @@ ActiveAdmin.register Post do
     end
   end
 
-  action_item do
+  action_item only: :index do
     link_to "View Site", "/"
   end
 
