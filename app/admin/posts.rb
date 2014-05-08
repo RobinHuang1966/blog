@@ -3,6 +3,10 @@ ActiveAdmin.register Post do
   #menu false
   #menu has label、priority、if、parent options
   menu :label => "My Posts", :priority => 1
+  scope :all, :default => true
+  filter :name, :as => :select
+  filter :title
+  #filter :content, :as => :select, :collection => lambda{ post.content }
   index do
     column :id
     column "userName",:name
@@ -18,6 +22,17 @@ ActiveAdmin.register Post do
     end
     default_actions
   end
+
+  sidebar :help do
+    ul do
+      li "First Line of Help"
+    end
+  end
+
+  action_item do
+    link_to "View Site", "/"
+  end
+
 
   show do
     #h3 post.title
