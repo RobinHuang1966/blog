@@ -17,6 +17,9 @@
     <td><%= post.content %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <!--Unobtrusive Javascript data-confirm: / data: {:'action-handler' => 'confirm'}-->
+    <!--data: { :'action-handler' => 'delete'/ data-action-hander: delete }-->
+    <!--actin-hander: select_address ,confirm, delete, apply,close,submit-->
     <td><%= link_to 'Destroy', post,
                     method: :delete,
                     data: { confirm: 'Are you sure?' } %></td>
